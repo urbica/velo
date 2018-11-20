@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta property="og:image" content="http://getwalk.me/velo/img/bikestats.jpg" />
+<meta property="og:description" content="Bike share stats in Moscow" />
+<meta property="og:title" content="Moscow bike share stats" />
+
+<title>Bike share stat in Moscow / Статистика поездок на Велобайках в Москве</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+<link rel="shortcut icon" href="http://sitename.ru/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="alternate icon" type="image/png" href="favicon.png"/>
+
+<link rel="stylesheet" href="velobikes.css?ghjgsss" />
+<script src="js/params.js"></script>
+<body>
+<div id="header">
+    <div id="logo"></div>
+    <div id="menu-mode">Маршруты</div>
+    <div id="right-menu">
+        <div id="lang-btn">По-русски</div>
+        <div id="share-like"><a id="new-project-link" href="http://urbica.co/bikes/">Новый проект</a></div>
+    </div>
+    <div id="menu">
+        <div id="mode-routes" class="menu-item-selected"></div>
+        <div id="mode-heatmap" class="menu-item"></div>
+        <div id="mode-calendar" class="menu-item"></div>
+        <div id="mode-about" class="menu-item"></div>
+    </div>
+</div>
+<div id="loader">
+    <div id="loader-total"></div>
+    <div id="loader-welcome"></div>
+    <div id="loader-welcome2"></div>
+    <div id="loader-progress-wrap"><div id="loader-progress"></div></div>
+    <div id="loader-state"></div>
+</div>
+<div id="tooltip">
+    <div id="tooltipFirst"></div>
+    <div id="tooltipSecond"></div>
+    <div id="tooltipThird"></div>
+</div>
+<div id="content">
+    <div id="routes-page" class="page">
+        <div id="map-routes"></div>
+        <div id="sidebar">
+            <div id="station-panel" class="panel">
+                <div id="station-panel-title">
+                    <div id="station-panel-close" class="closeBtn"></div>
+                    <div id="station-title"></div>
+                </div>
+            <div id="station-panel-scores">
+                <div id="station-total-score">
+                    <div id="station-total-score-value">
+                    4659
+                    </div>
+                    <div id="station-total-score-description">
+                    прокатов
+                    </div>
+                </div>
+                <div id="station-total-perday">
+                    <div id="station-total-perday-value">
+                        4659
+                    </div>
+                    <div id="station-total-perday-description">
+                        прокатов
+                    </div>
+                </div>
+                <div id="station-total-percent">
+                    <div id="station-total-percent-value">
+                        4659
+                    </div>
+                    <div id="station-total-percent-description">
+                        прокатов
+                    </div>
+                </div>
+            </div>
+            <div id="station-panel-content"></div>
+        </div>
+    </div>
+</div>
+<div id="heatmap-page" class="page">
+   <div id="map-heat"></div>
+    <div id="heatmap-filter-btn" class="panel">
+        <div id="heatmap-filter-icon"></div>
+    </div>
+   <div id="heatmap-controls" class="panel">
+       <div class="control" id="total-heatmap"></div>
+       <div id="heatmap-controls-days"></div>
+       <div id="heatmap-controls-hours"></div>
+   </div>
+   <div id="heatmap-info" class="panel">
+       <div id="heatmap-info-date"></div>
+       <div id="heatmap-info-weather"></div>
+       <div id="heatmap-info-time"></div>
+       <div id="heatmap-info-score"></div>
+       <div id="heatmap-info-score-description"></div>
+   </div>
+   <div id="heatmap-time-control-wrapper">
+        <div id="heatmap-time-scale" class="panel">
+           <div id="heatmap-time-scale-graph"></div>
+           <div id="heatmap-play-control" class="stopped"></div>
+        </div>
+   </div>
+
+</div>
+<div id="calendar-page" class="page-scrolling">
+    <div id="calendar-header">
+    </div>
+    <div id="calendar-content">
+    </div>
+</div>
+<div id="about-page" class="page-scrolling">
+<div id="about-title">Привет</div>
+<div id="about-content-ru">
+    <p>Проект визуализирует статистику работы Велобайков в Москве за весь велосезон с 9 июня по 11 ноября 2014 года.</p>
+    <p>В проекте три режима просмотра данных:<br/>Маршруты&nbsp;&#151;&nbsp;кликая в станцию можно посмотреть общую статистику, распределение поездок по времени суток и дням недели, узнать популярные направления поездок с неё.
+        <br/>Активность&nbsp;&#151;&nbsp;тепловые карты активности работы станций: по времени суток, по дням недели или активность по районам в любой день и час.
+        <br/>Календарь&nbsp;&#151;&nbsp;активность работы велопроката по дням за весь период с историей погоды. Особенно интересно увидеть как дожди или жара влияют на прокат велосипедов. Кроме общей активности число поездок можно увидеть статистику по каждой станции, хорошо видно что далеко не все станции начали свою работу с начала лета.</p>
+    <p>Данные: <a href="http://velobike.ru">Велобайк</a></p>
+    <p>Технологии: <a href="http://api.yandex.ru/maps">API Яндекс.Карт</a> + модуль <a href="https://github.com/yandex/mapsapi-heatmap">для тепловых карт</a>, <a href="http://d3js.org">D3.js</a></p>
+    <p>При использовании материалов с этого сайта, ссылка очень желательна</p>
+    <p>©&nbsp;<a href="http://getwalk.me/">Андрей Кармацкий</a></p>
+</div>
+<div id="about-content-en">
+    <p>The project shows Moscow bike share system data since 9 Jun to 11 Nov 2014.</p>
+    <p>There are three modes:<br/>Routes&nbsp;&#151;&nbsp;clicking in stations placemarks it shows total stats, stats by hours, stats by weekdays and the most popular directions of rides from this station.
+        <br/>Activity&nbsp;&#151;&nbsp;heatmaps shows how active every part of bike share coverage, you can play an animation or choose a slice of data by time, hour or by weekday.
+        <br/>Timeline&nbsp;&#151;&nbsp;bike stats by day of the period. Graph shows how weather conditions influence on bike share system.</p>
+    <p>Source data: <a href="http://velobike.ru">Velobike</a></p>
+    <p>The project developed using <a href="http://api.yandex.ru/maps">Yandex Maps API</a> + <a href="https://github.com/yandex/mapsapi-heatmap">heatmap module</a>, <a href="http://d3js.org">D3.js</a></p>
+    <p>©&nbsp;<a href="http://getwalk.me/">Andrey Karmatsky</a></p>
+
+
+</div>
+</div>
+
+</div>
+<script src="http://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
+<script src="js/bowser.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
+<script src="js/heatmap.min.js"></script>
+<script src="velobikes.js?tyui"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter26158509 = new Ya.Metrika({id:26158509,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/26158509" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

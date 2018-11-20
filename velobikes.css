@@ -1,0 +1,869 @@
+
+body,html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: helvetica, sans-serif, arial;
+    color: #dddddd;
+    background: #333333;
+    font-size: 14px;
+
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 24px;
+}
+
+#new-project-link {
+/*  position: absolute;
+  left: 0;
+  bottom: 8px;
+  z-index: 100500;
+  text-align: center;
+  padding: 2px;
+  color: #ccc;
+  background: rgba(0, 0, 0, 0.8);
+  display: block;
+  font-size: 14px;
+  */
+}
+
+#new-project-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#new-project-link:visited,
+#new-project-link:active,
+#new-project-link:hover
+ {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #00A0A0;
+    background: url('img/bg-loader.svg') center center no-repeat;
+    display: block;
+}
+
+#loader-total {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 100%;
+    color: #F0F0F0;
+    font-size: 48px;
+    display: block;
+
+}
+
+#loader-welcome {
+    text-align: center;
+    width: 100%;
+    color: #00A0A0;
+    font-size: 32px;
+    display: block;
+}
+
+#loader-welcome2 {
+    text-align: center;
+    width: 100%;
+    color: #00A0A0;
+    margin-top: 24px;
+    font-size: 24px;
+    display: block;
+}
+
+#loader-state {
+    text-align: center;
+    width: 100%;
+    color: #009090;
+    font-size: 18px;
+    display: block;
+}
+
+#loader-progress-wrap {
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#loader-progress {
+    border-radius: 1.5px;
+    height: 4px;
+    width: 200px;
+}
+
+
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5000;
+    width: 100%;
+    height: 60px;
+    min-height: 60px;
+    line-height: 60px;
+    color: white;
+    font-size: 20px;
+    background: #508383;
+    display: block;
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+}
+
+
+
+#logo {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 60px;
+    background: url('img/logo2.svg') 20px 16px no-repeat;
+}
+
+#share {
+    float: right;
+}
+
+#menu-mode {
+    display: none;
+    cursor: pointer;
+    padding-right: 20px;
+    background: url('img/menu-arrow.svg') right center no-repeat;
+}
+
+
+.menu-item, .menu-item-selected {
+    display: inline-block;
+    margin: 0px 20px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.menu-item-selected {
+    border-bottom: 2px solid white;
+}
+
+
+#map-heat, #map-routes {
+    width: 100%;
+    height: 100%;
+}
+
+
+.page {
+    width: 100%;
+    height: 100%;
+    min-height:100%;
+}
+
+#routes-page, #calendar-page, #heatmap-page, #about-page {
+    display: none;
+}
+
+#calendar-page {
+    overflow:auto;
+}
+
+#about-page {
+    padding: 80px 40px 80px 80px;
+}
+
+
+#content {
+    width: 100%;
+    height: 100%;
+}
+
+
+a, a:visited {
+    color: #ccc;
+}
+
+
+
+#tooltip {
+    visibility: hidden;
+    font-family: Helvetica, Arial, Sans-Serif;
+    background: rgba(30, 30, 30, 0.65);
+    color: #f0f0f0;
+    padding: 10px;
+    max-width: 250px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 100666;
+    text-align: center;
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+}
+
+#tooltipFirst { }
+#tooltipSecond { font-size: 20px; line-height: 30px; }
+#tooltipThird { color: #dddddd; }
+
+
+.panel {
+    background: rgba(30,30,30,0.75);
+    border-radius: 3px;
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+}
+
+#station-panel {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    width: 340px;
+    padding: 0;
+}
+
+#station-panel-content {
+    padding: 20px;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#station-panel-close {
+    margin: 10px;
+    display: block;
+    float: right;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url('img/icon-close.svg') center center no-repeat;
+}
+
+#station-panel-close:hover {
+    opacity: 1;
+}
+
+#station-panel-title {
+}
+
+#station-title {
+    padding: 20px 20px 20px 20px;
+    min-height: 40px;
+}
+
+.station-placemark {
+    opacity: 0.7;
+}
+
+.station-placemark:hover {
+    opacity: 0.9;
+}
+
+#station-title-name {
+    font-size: 20px;
+    line-height: 28px;
+    color: #f0f0f0;
+}
+
+#station-panel-scores {
+    min-height: 60px;
+    vertical-align: top;
+    text-align: center;
+}
+
+#station-total-score, #station-total-percent, #station-total-perday {
+    display: inline-block;
+    min-width: 90px;
+    margin: 0;
+    text-align: center;
+    vertical-align: top;
+}
+
+#station-total-score-value, #station-total-percent-value, #station-total-perday-value {
+    color: #f0f0f0;
+    display: block;
+    max-width: 80px;
+    font-size: 32px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+#station-total-score-description, #station-total-percent-description, #station-total-perday-description {
+    color: #cccccc;
+    display: block;
+    max-width: 80px;
+    font-size: 13px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+#station-title-description {
+    font-size: 13px;
+    line-height: 16px;
+    color: #cccccc;
+}
+
+#station-score {
+    font-size: 32px;
+    line-height: 40px;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+#station-score-description {
+    font-size: 13px;
+    line-height: 16px;
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.station-subtitle {
+    margin: 15px 0px;
+    font-size: 15px;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+.route,.route-roundtrip {
+    border-top: 1px solid #888888;
+    padding: 20px 20px;
+    text-align: left;
+}
+
+.route-code, .route-duration, .route-distance {
+    color: #cccccc;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 1px;
+    width: 60px;
+    display: inline-block;
+}
+
+.route-duration {
+    padding-left: 16px;
+    background: url('img/icon-duration.svg') 0px center no-repeat;
+}
+
+.route-distance {
+    padding-left: 16px;
+    background: url('img/icon-distance.svg') 0px center no-repeat;
+}
+
+
+.route-total {
+    margin-left: 20px;
+    height: 100%;
+    float: right;
+    display: block;
+    cursor: pointer;
+}
+
+#heatmap-filter-btn {
+    position: absolute;
+    z-index: 1000;
+    top: 70px;
+    left: 10px;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+
+#heatmap-filter-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: block;
+    background: url('img/icon-filter.svg') center center no-repeat;
+
+}
+
+#heatmap-controls {
+    position: absolute;
+    left: 20;
+    top: 60px;
+    min-height: 50px;
+    width: 100%;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    display: block;
+}
+
+/*heatmap controls */
+.control-description {
+    color: #888888;
+    font-size: 13px;
+    display: inline-block;
+    min-width: 20px;
+    cursor: pointer;
+    line-height: 20px;
+    margin: 2px 2px;
+    padding: 4px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+
+.control, .control-selected {
+    font-size: 12px;
+    display: inline-block;
+    min-width: 20px;
+    cursor: pointer;
+    line-height: 20px;
+    margin: 2px 2px;
+    padding: 4px;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+}
+
+.control {
+    border: 2px solid rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.7);
+}
+
+.control-selected {
+    border: 2px solid rgba(10,213,213,1);
+    background: rgba(0,0,0,0.7);
+}
+
+#heatmap-controls .control, #heatmap-controls .control-selected {
+    min-width: 30px;
+}
+
+#heatmap-controls-days, #heatmap-controls-hours {
+    display: inline-block;
+}
+
+#heatmap-info {
+    position: absolute;
+    right: 20px;
+    bottom: 120px;
+    width: 160px;
+    min-height: 30px;
+    padding: 10px;
+    text-align: center;
+    visibility: hidden;
+}
+
+#heatmap-info-date, #heatmap-info-weather, #heatmap-info-score-description  {
+    padding: 2px;
+    font-size: 15px;
+    color: #aaaaaa;
+}
+
+#heatmap-info-time {
+    font-size: 18px;
+    padding: 10px;
+    color: #eeeeee;
+}
+
+#heatmap-info-score {
+    font-size: 32px;
+    padding: 10px;
+    color: #eeeeee;
+}
+
+
+#heatmap-time-control-wrapper {
+    position:fixed;
+    bottom:30px;
+    left:0px;
+    width: 100%;
+    text-align: center;
+}
+
+#heatmap-play-control {
+    position: absolute;
+    z-index: 10000;
+    left: 30px;
+    bottom: 40px;
+    width: 40px;
+    height: 28px;
+    border-radius: 3px;
+    opacity: 0.95;
+    cursor: pointer;
+    border-bottom: #508383 2px solid;
+}
+
+#heatmap-play-control:hover {
+    opacity: 1;
+}
+
+#heatmap-play-control:active {
+    opacity: 1;
+    margin-top: 1px;
+    border-bottom: #508383 1px solid;
+
+}
+
+
+.stopped {
+    background: url('img/play.svg') center center no-repeat;
+}
+
+.playing {
+    background: url('img/stop.svg') center center no-repeat;
+}
+
+#heatmap-time-scale {
+    width: 700px;
+    cursor: pointer;
+    display: inline-block;
+    height: 80px;
+    line-height: 80px;
+    vertical-align: bottom;
+}
+
+#heatmap-time-scale-graph {
+    width: 1000px;
+    height: 80px;
+    display: block;
+}
+
+#heatmap-time-control-svg {
+    z-index: 9000;
+    left: 0px;
+    top: 0px;
+}
+
+.day {
+    display: inline-block;
+    background: #f0f0f0;
+    height: 10px;
+    min-width: 2px;
+    margin-right: 1px;
+}
+
+
+#calendar-page {
+    display: block;
+    background: #333333;
+    overflow: auto;
+}
+
+#calendar-page svg {
+    display: block;
+    background: #333333;
+    overflow-y: auto;
+}
+
+#calendar-header {
+    display:none;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    z-index: 4000;
+    text-align: left;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    font-size: 12px;
+    background: #333333;
+    display: block;
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+}
+
+#calendar-content {
+    padding-top: 100px;
+}
+
+#calendar-header-timescale {
+    vertical-align: top;
+
+}
+
+
+#calendar-header-timescale-left {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    text-align: center;
+    background: #646464;
+}
+
+#calendar-header-timescale-area {
+    width: 10px;
+    height: 30px;
+    display: inline-block;
+}
+
+.calendar-title {
+    color: #f0f0f0;
+    width: 100%;
+    text-align: center;
+}
+
+.tick-day {
+    font-size: 12px;
+    fill: #eeeeee;
+}
+
+.axis text {
+    font: 12px sans-serif;
+    fill: #64A2A2;
+}
+
+.axis-weather text {
+    font: 12px sans-serif;
+    fill: #cccccc;
+}
+
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #64A2A2;
+    shape-rendering: crispEdges;
+}
+
+.axis-weather path,
+.axis-weather line {
+    fill: none;
+    stroke: #cccccc;
+    shape-rendering: crispEdges;
+}
+
+#about {
+    position: fixed;
+    display: none;
+    z-index: 99000;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -250px;
+    height: 400px;
+    width: 500px;
+    padding: 20px;
+}
+
+
+#about-title {
+    font-size: 20px;
+    color: #f0f0f0;
+}
+
+#about-content-ru, #about-content-en {
+    margin-top: 20px;
+    display: none;
+}
+
+#right-menu {
+    float: right;
+    font-size: 15px;
+}
+
+#lang-btn {
+    color: #D2DDDE;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 30px;
+    margin: 0px 20px 0px 0px
+}
+
+#share-like {
+    color: #D2DDDE;
+    display: inline-block;
+    line-height: 30px;
+    margin: 0px 20px 0px 0px
+}
+
+#share-like img {
+    opacity: 0.7;
+}
+
+#share-like img:hover {
+    opacity: 1;
+}
+
+#share-like span {
+    line-height: 30px;
+    min-width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+#share-like a img {
+    border: none;
+}
+
+.share-icon {
+    margin-bottom: -3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+#lang-btn:hover {
+    color: #ffffff;
+}
+
+.like-share-fb {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 30px;
+    margin: 0px 20px 12px 0px;
+    padding-bottom: 0px;
+}
+
+.like-share-twitter {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 30px;
+    margin: 7px 20px 0px 0px;
+    padding-top: 0px;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    #loader-total {
+        margin-top: 100px;
+    }
+
+    .like-share-twitter, .like-share-fb {
+        display: none;
+
+    }
+
+    .tick-day {
+        font-size: 10px;
+    }
+
+    .axis text {
+        font: 10px sans-serif;
+        fill: #64A2A2;
+        margin-right: 3px;
+    }
+
+    .axis-weather text {
+        margin-left: -3px;
+        font: 10px sans-serif;
+        fill: #CCCCCC;
+    }
+
+    .menu-item-selected, .menu-item {
+        margin: 0px 10px;
+    }
+
+
+}
+
+@media only screen and (max-width: 750px) {
+
+    #heatmap-time-control-wrapper {
+        display: none;
+    }
+
+
+    #heatmap-controls {
+        text-align: left;
+    }
+
+
+    #menu {
+        width: 100%;
+        display: block;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        z-index: 8000;
+        background: rgba(0,0,0,0.7);
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+        visibility: visible; /*the toggleMenu will hide the menu for first time */
+
+    }
+
+    .menu-item-selected, .menu-item {
+        padding-top: 10px;
+        margin: 0px 20px;
+        display: block;
+        width: 100%;
+        border: none;
+    }
+
+
+    #menu-mode {
+        display: inline-block;
+    }
+
+
+    #share-like {
+        display: block;
+        line-height: 20px;
+
+    }
+
+    #right-menu {
+        font-size: 13px;
+    }
+
+    #about-btn, #lang-btn {
+        display: block;
+        margin: 0 5px 0 0;
+    }
+
+    #loader-total {
+        margin-top: 50px;
+    }
+
+
+    #station-panel {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        width: 100%;
+        padding: 0;
+    }
+
+    #ddd {
+        position: absolute;
+        left:  10px;
+        top: 10px;
+        padding: 0;
+        z-index: 6000;
+        background: red;
+        display: block;
+    }
+
+    #station-panel-content {
+        display: none;
+    }
+
+    #station-panel-content {
+        display: none;
+    }
+
+    #station-title {
+        padding: 10px;
+    }
+
+    #about-page {
+        padding: 80px 20px 20px 20px;
+    }
+
+    .axis text {
+        font: 9px sans-serif;
+        fill: #64A2A2;
+    }
+
+    .axis-weather text {
+        margin-left: -4px;
+        font: 9px sans-serif;
+        fill: #CCCCCC;
+    }
+
+
+}
